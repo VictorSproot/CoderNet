@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+
+    <meta name="keywords"
+          content="Книги по программированию, скачать, pdf программирование, скачать pdf, библиотека программиста, архив книг, скачать книги бесплатно, книги программиста бесплатно">
+    <meta name="description"
+          content="CoderNet это самая большая и бесплатная библиотека для начинающего и опытного программиста">
+    <link rel="icon" type="image/png" href="https://codernet.ru/favicon.ico">
+    <title>
+        {% block title %}
+            CoderNet учебная литература для программистов
+        {% endblock %} | CoderNet
+    </title>
+</head>
+<body>
+<header>
+    <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="/"><h2>&nbsp;CoderNet</h2></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="fa fa-search"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav mr-auto">
+           <li class="nav-item active">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <!-- <li class="nav-item active">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Disabled</a>
+            </li>-->
+          </ul>
+           <div class="col-sm-4"><div class="ya-site-form ya-site-form_inited_no" onclick="return {'action':'https://codernet.ru/search.php','arrow':true,'bg':'#333333','fontsize':16,'fg':'#000000','language':'ru','logo':'rb','publicname':'Поиск по сайту','suggest':true,'target':'_self','tld':'ru','type':2,'usebigdictionary':true,'searchid':2317371,'input_fg':'#000000','input_bg':'#ffffff','input_fontStyle':'italic','input_fontWeight':'normal','input_placeholder':'&nbsp;Поиск','input_placeholderColor':'#000000','input_borderColor':'#cccccc'}"><form action="https://yandex.ru/search/site/" method="get" target="_self" accept-charset="utf-8"><input type="hidden" name="searchid" value="2317371"/><input type="hidden" name="l10n" value="ru"/><input type="hidden" name="reqenc" value=""/><input type="search" name="text" value=""/><input type="submit" value="Найти"/></form></div></div><style type="text/css">.ya-page_js_yes .ya-site-form_inited_no { display: none; }</style><script type="text/javascript">(function(w,d,c){var s=d.createElement('script'),h=d.getElementsByTagName('script')[0],e=d.documentElement;if((' '+e.className+' ').indexOf(' ya-page_js_yes ')===-1){e.className+=' ya-page_js_yes';}s.type='text/javascript';s.async=true;s.charset='utf-8';s.src=(d.location.protocol==='https:'?'https:':'http:')+'//site.yandex.net/v2.0/js/all.js';h.parentNode.insertBefore(s,h);(w[c]||(w[c]=[])).push(function(){Ya.Site.Form.init()})})(window,document,'yandex_site_callbacks');</script>
+          
+        </div>
+      </nav>
+
+</header>
+<br/><br/><br/>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample10"
+                        aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">
+                    <div class="list-group col-sm-12">
+                        <br/>
+                        <a href="/book/" class="list-group-item disabled">Home</a>
+                        {% for category in categories %}
+                            <a href="{{ category.get_absolute_url }}" class="list-group-item disabled">{{ category.title }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="col-sm"><br/>
+            {% block content %}
+                <h1><strong>Самый большой сборник учебной литературы для программиста.</strong></h1>
+                <img src="https://codernet.ru/img/CoderNet_RU.jpg" width="100%" alt="CoderNet">
+                <blockquote class="blockquote"><p>Мы представляем вам абсолютно новый и уникальный проект который
+                    поможет
+                    начинающим и не только программистам найти нужную литературу по интересующему языку
+                    программирования. </p>
+                    <p>Здесь вы можете абсолютно бесплатно скачать любое количество книг по программированию как для
+                        новичков так и для опытных в формате pdf. </p>
+                    <p>Для Вашего удобства мы сделали возможность предварительного просмотра интересующей Вас книги для
+                        того
+                        что бы вы могли ознакомиться с ней прежде чем решить скачивать её или нет. </p>
+                    <p>Весь имеющийся архив книг который есть на сайте и постоянно будет дополнятся нашей командой
+                        никогда
+                        не будет платным, мы не коммерческая организация. </p>
+                    <p>Мы будем очень благодарны вам если под понравившейся книгой вы нажмёте одну из кнопок социальных
+                        сетей и поделитесь с друзьями. </p>
+                    <p>По всем вопросам обращаться на почту <a href="mailto:codernet@inbox.ru" rel="nofollow">codernet@inbox.ru</a>
+                    </p></blockquote>
+            {% endblock %}
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <hr>
+    <div class="container">
+        <blockquote class="blockquote"><p>&copy; {% now "Y" %} The CoderNet Team</p></blockquote>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function () {
+            try {
+                w.yaCounter46559994 = new Ya.Metrika2({
+                    id: 46559994,
+                    clickmap: true,
+                    trackLinks: true,
+                    accurateTrackBounce: true,
+                    webvisor: true
+                });
+            } catch (e) {
+            }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () {
+                n.parentNode.insertBefore(s, n);
+            };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/tag.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else {
+            f();
+        }
+    })(document, window, "yandex_metrika_callbacks2");
+</script>
+<noscript>
+    <div><img src="https://mc.yandex.ru/watch/46559994" style="position:absolute; left:-9999px;" alt=""/></div>
+</noscript>
+</body>
+</html>

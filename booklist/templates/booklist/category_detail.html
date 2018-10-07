@@ -1,0 +1,56 @@
+{% extends 'booklist/booklist.html' %}
+
+{% block title %}
+    {{ category.title }}
+{% endblock %}
+
+{% block content %}
+<h1><strong>{{ category.title }}</strong></h1></br>
+<div class="container">
+<div class="row">
+<div class="col-sm-6">
+<div class="list-group">
+<h4 class="card-title list-group-item disabled">Русский</h4>
+<div class="list-group-item disabled">
+{% for book in category.books.all %}
+{% if book.lang_category == 1 %}
+<ul class="list-unstyled">
+<li class="media">
+{% if book.img_file %}<a href='{{ book.get_absolute_url }}'><img class="mr-3" src="{{ book.img_file.url }}" height="64px" width="64px" alt="{{ book.title }}"></a>{% endif %}
+<div class="media-body">
+<h5 class="mt-0"><a href='{{ book.get_absolute_url }}'>
+<p class='text-dark'>{{ book.title }}</p></h5></a>
+<p class='text-dark'>{{ book.description|truncatewords:10 }}</p>
+</div>
+</li>
+</ul>
+{% endif %}
+{% endfor %}
+</div>
+</div>
+</div>               
+<div class="col-sm-6">
+<div class="list-group">
+<h4 class="card-title list-group-item disabled">English</h4>
+<div class="list-group-item disabled">
+{% for book in category.books.all %}
+{% if book.lang_category == 2 %}
+<ul class="list-unstyled">
+<div class="media">
+{% if book.img_file %}<a href='{{ book.get_absolute_url }}'><img class="mr-3" src="{{ book.img_file.url }}" height="64px" width="64px" alt="{{ book.title }}"></a>{% endif %}
+<div class="media-body">
+<h5 class="mt-0"><a href='{{ book.get_absolute_url }}'>
+<p class='text-dark'>{{ book.title }}</p></h5></a>
+<p class='text-dark'>{{ book.description|truncatewords:10 }}</p>
+</div>
+</li>
+</ul> 
+{% endif %}
+{% endfor %}
+</div>
+</div>
+</div> 
+</div>
+</div>
+
+{% endblock %}
