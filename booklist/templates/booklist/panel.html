@@ -7,7 +7,7 @@
                 <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">
                     <div class="list-group col-sm-12">
                         <br/>
-                        <a href="/book/" class="list-group-item disabled">Home</a>
+                        <a href="/" class="list-group-item disabled">Home</a>
                         {% for category in categories %}
                             <a href="{{ category.get_absolute_url }}" class="list-group-item disabled">{{ category.title }}</a>
                         {% endfor %}

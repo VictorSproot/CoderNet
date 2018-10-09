@@ -3,6 +3,12 @@
 {% block title %}
     {{ book.title }}
 {% endblock %}
+
+    {% block keywords %}<meta name="keywords"
+          content="{{ book.keywords }}">{% endblock %}
+    {% block description %}<meta name="description"
+          content="{{ book.desc_for_find }}">{% endblock %}
+
 {% block content %}
     <div class="col-sm"><br/>
         <a href="#" class="btn btn-outline-secondary " onclick="history.back();"><i class="fa fa-reply" aria-hidden="true"></i></i>&nbsp;Вернуться</a><br/>

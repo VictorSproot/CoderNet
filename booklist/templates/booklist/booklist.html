@@ -1,7 +1,21 @@
 <!doctype html>
 {% load staticfiles %}
 <html lang="ru">
+<head>
+
 {% include "booklist/header.html" %}
+
+    {% block keywords %}<meta name="keywords"
+          content="Книги по программированию, скачать, pdf программирование, скачать pdf, библиотека программиста, архив книг, скачать книги бесплатно, книги программиста бесплатно">{% endblock %}
+    {% block description %}<meta name="description"
+          content="CoderNet это самая большая и бесплатная библиотека для начинающего и опытного программиста">{% endblock %}
+    <link rel="icon" type="image/png" href="{% static "image/favicon.ico" %}">
+    <title>
+        {% block title %}
+            CoderNet учебная литература для программистов
+        {% endblock %} | CoderNet
+    </title>
+</head>
 <body>
 {% include "booklist/navbar.html" %}
 <br/><br/><br/>
