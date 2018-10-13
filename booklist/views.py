@@ -16,10 +16,6 @@ def book_list(request):
     return render(request, 'booklist/booklist.html', context=context)
 
 
-# class CategoryDetail(ObjectDetailMixin, View):
-#     model = Category
-#     template = 'booklist/category_detail.html'
-
 
 class BookDetail(ObjectDetailMixin, View):
     model = Book
@@ -32,7 +28,9 @@ def category_detail(request, slug):
     eng_books = Book.objects.filter(lang_category=2, category=category)
     rus_books = Book.objects.filter(lang_category=1, category=category)
     books = Book.objects.filter(category=category)
-
+    if not category:
+        return render(request, '404.html', context={})
+        return render(request, 'category_detail.html', context={'category':category})
     # Пагинатор начало
     paginator1 = Paginator(rus_books, 2)
     page_number1 = request.GET.get('page', default=1)

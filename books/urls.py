@@ -22,7 +22,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin_path_root/', admin.site.urls),
-    path('', include('booklist.urls'))
+    path('', include('booklist.urls'))  
 ]
 
 if settings.DEBUG:
