@@ -1,17 +1,17 @@
-        <div class="col-sm-3">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample10"
-                        aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">
-                    <div class="list-group col-sm-12">
-                        <br/>
-                        <a href="/" class="list-group-item disabled">Home</a>
-                        {% for category in categories %}
-                            <a href="{{ category.get_absolute_url }}" class="list-group-item disabled">{{ category.title }}</a>
-                        {% endfor %}
-                    </div>
-                </div>
-            </nav>
+<div class="col-sm-3">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample10"
+                aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">
+            <div class="list-group col-sm-12">
+                <br/>
+
+                {% for category in categories %}
+                    <a href="{{ category.get_absolute_url }}" class="list-group-item disabled">{{ category.title }}</a>
+                {% endfor %}
+            </div>
         </div>
+    </nav>
+</div>

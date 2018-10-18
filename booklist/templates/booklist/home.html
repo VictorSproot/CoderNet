@@ -1,0 +1,86 @@
+<!doctype html>
+{% load staticfiles %}
+<html lang="ru">
+<head>
+
+{% include "booklist/header.html" %}
+
+    {% block keywords %}<meta name="keywords"
+          content="Книги по программированию, скачать, pdf программирование, скачать pdf, библиотека программиста, архив книг, скачать книги бесплатно, книги программиста бесплатно">{% endblock %}
+    {% block description %}<meta name="description"
+          content="CoderNet это самая большая и бесплатная библиотека для начинающего и опытного программиста">{% endblock %}
+    <link rel="icon" type="image/png" href="{% static "image/favicon.ico" %}">
+    <title>
+        {% block title %}
+            CoderNet учебная литература для программистов
+        {% endblock %} | CoderNet
+    </title>
+</head>
+<body>
+{% include "booklist/navbar.html" %}
+<br/><br/><br/>
+
+<div class="container-fluid">
+
+
+{% block content %}
+    <main role="main">
+
+      <div class="container"></br>
+        <!-- Example row of columns -->
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Книги</h2>
+            <p>Описание: Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn btn-secondary" href="{% url 'book_list_url' %}" role="button">Перейти &raquo;</a></p>
+          </div>
+          <div class="col-md-6">
+            <h2>Видео</h2>
+            <p>Описание: Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn btn-secondary" href="{% url 'category_video_list_url' %}" role="button">Перейти &raquo;</a></p>
+          </div>
+
+        </div>
+
+        <hr>
+
+      </div> <!-- /container -->
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+     
+
+
+        <div class="container">
+          <h1><strong>Самый большой сборник учебной литературы и видеокурсов для программиста.</strong></h1>
+           <img src="{% static "image/CoderNet_RU.jpg" %}" width="100%" alt="CoderNet">
+                <blockquote class="blockquote"><p>Мы представляем вам абсолютно новый и уникальный проект который
+                    поможет
+                    начинающим и не только программистам найти нужную литературу по интересующему языку
+                    программирования. </p>
+                    <p>Здесь вы можете абсолютно бесплатно скачать любое количество книг по программированию как для
+                        новичков так и для опытных в формате pdf. </p>
+                    <p>Для Вашего удобства мы сделали возможность предварительного просмотра интересующей Вас книги для
+                        того
+                        что бы вы могли ознакомиться с ней прежде чем решить скачивать её или нет. </p>
+                    <p>Весь имеющийся архив книг который есть на сайте и постоянно будет дополнятся нашей командой
+                        никогда
+                        не будет платным, мы не коммерческая организация. </p>
+                    <p>Мы будем очень благодарны вам если под понравившейся книгой вы нажмёте одну из кнопок социальных
+                        сетей и поделитесь с друзьями. </p>
+                    <p>По всем вопросам обращаться на почту <a href="mailto:codernet@inbox.ru" rel="nofollow">codernet@inbox.ru</a>
+                    </p></blockquote>
+          <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+        </div>
+
+
+
+    </main>
+
+        </div>
+    </div>
+</div>            {% endblock %}
+{% include "booklist/footer.html" %}
+</body>
+</html>
+
+
+

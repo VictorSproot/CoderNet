@@ -17,13 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
-
-
+from .views import main_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('booklist.urls')),
-    path('video', include('watch.urls'))   
+    path('', main_page, name='main_page_url'),
+    path('book/', include('booklist.urls')),
+    path('videos/', include('video.urls'))
 ]
 
 if settings.DEBUG:
