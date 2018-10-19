@@ -29,8 +29,11 @@ ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
+SITE_ID = 1
 
 INSTALLED_APPS = [
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'booklist.apps.BooklistConfig',
-    'video.apps.VideoConfig'
+    'video.apps.VideoConfig',
+    'articles.apps.ArticlesConfig'
 ]
 
 MIDDLEWARE = [

@@ -46,6 +46,7 @@ class Category(models.Model):
     slug = models.SlugField(max_length=200, db_index=True, unique=True)
     desc_for_find_cat = models.TextField(blank=True, db_index=True, verbose_name='Описание для поиска')
     keywords_cat = models.CharField(max_length=200, blank=True, verbose_name='Кейвордс')
+
     def get_absolute_url(self):
         return reverse('category_detail_url', kwargs={'slug': self.slug})
 

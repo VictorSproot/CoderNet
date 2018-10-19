@@ -1,0 +1,24 @@
+{% extends 'booklist/booklist.html' %}
+
+{% block title %}
+    {{ article.title }}
+{% endblock %}
+
+{% block content %}
+    <p class="h1">{{ article.title }}</p>
+    </br>        
+
+
+    {% if article.img_file %}
+ 
+<img class="card-img-top"
+src="{{ article.img_file.url }}">
+ 
+{% endif %}
+
+</br>  
+   <blockquote class="blockquote"> {{ article.body }}</blockquote>
+    </br> 
+    {{ article.created }}
+{% endblock %}
+

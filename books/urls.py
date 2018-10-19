@@ -19,11 +19,26 @@ from django.conf.urls.static import static
 from django.conf import settings
 from .views import main_page
 
+from django.contrib.sitemaps.views import sitemap
+from books.sitemaps import *
+
+sitemaps = {
+    'articles_category': ArticlesCategorySitemap,
+    'video_category': VideoCategorySitemap,
+    'books_category': BookCategorySitemap,
+    'books': BookSitemap,
+    'courses': CourseSitemap,
+    'articles': ArticleSitemap,
+    'static': StaticViewSitemap
+}
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', main_page, name='main_page_url'),
-    path('book/', include('booklist.urls')),
-    path('videos/', include('video.urls'))
+    path('books/', include('booklist.urls')),
+    path('videos/', include('video.urls')),
+    path('articles/', include('articles.urls')),
+    path('sitemaps.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap')
 ]
 
 if settings.DEBUG:

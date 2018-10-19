@@ -18,7 +18,7 @@ class Video(models.Model):
 
 class Course(models.Model):
     title = models.CharField(max_length=200, db_index=True, verbose_name='Название курса')
-    slug = models.SlugField(max_length=200, verbose_name='Ссылка')
+    slug = models.SlugField(max_length=200, verbose_name='Ссылка', unique=True)
     category = models.ManyToManyField('Category', related_name='courses', verbose_name='Категория')
 
     def get_absolute_url(self):
