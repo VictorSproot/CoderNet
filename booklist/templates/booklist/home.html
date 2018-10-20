@@ -26,24 +26,24 @@
 <div class="row">
 <div class="col-md-4">
             <h2>Книги</h2>
-            <p>Описание: Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p>В нашей медийной библиотеке вы можете найти огромное количество книг в формате PDF по всем популярным языкам программирования как на русском так и на английском языках. </p>
 <p><a class="btn btn-secondary" href="{% url 'book_list_url' %}" role="button">Перейти &raquo;</a></p>
           </div>
 <div class="col-md-4">
             <h2>Видео</h2>
-            <p>Описание: Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p>Для Вас мы собрали самые интересные и полезные видеокурсы, лекции и уроки для различных языков программирования которые только есть в открытом доступе глобальной сети. </p>
 <p><a class="btn btn-secondary" href="{% url 'category_video_list_url' %}" role="button">Перейти &raquo;</a></p>
 </div>
 <div class="col-md-4">
             <h2>Статьи</h2>
-            <p>Описание: Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p>Полезные статьи по программированию от опытных программистов, а так же участников нашей команды CoderNet Team помогут Вам понять логику программирования и найти ответы на Ваши вопросы. </p>
             <p><a class="btn btn-secondary" href="{% url 'articles_list_url' %}" role="button">Перейти &raquo;</a></p>
 </div>
 </div>
 <hr>
 </div>
 <div class="container">
-          <h1><strong>Самый большой сборник учебной литературы и видеокурсов для программиста.</strong></h1>
+          <h1><strong>Самый большой сборник учебной литературы, видеокурсов и статей для программиста.</strong></h1>
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 <ol class="carousel-indicators">
 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -55,8 +55,8 @@
 <img class="d-block w-100" src="{% static "image/book_img.jpg" %}" alt="First slide">
 <div class="carousel-caption d-none d-md-block">
 <div class="alert alert-dark alert-dismissible fade show" role="alert">
-    <h5>Книги</h5>
-    <p>Описание: Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+<h5><a href="{% url 'book_list_url' %}" class="alert-link">Книги</a> </h5>
+<p>Библиотека книг в формате PDF с предварительным чтением</p>
 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 <span aria-hidden="true">&times;</span>
 </button>
@@ -67,8 +67,8 @@
 <img class="d-block w-100" src="{% static "image/video_img.jpg" %}" alt="Second slide">
 <div class="carousel-caption d-none d-md-block">   
 <div class="alert alert-dark alert-dismissible fade show" role="alert">
-    <h5>Видео</h5>
-    <p>Описание: Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+<h5> <a href="{% url 'category_video_list_url' %}" class="alert-link">Видео</a> </h5>
+<p>Подборка лучших видео для обучения программированию</p>
 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 <span aria-hidden="true">&times;</span>
 </button>
@@ -79,8 +79,8 @@
 <img class="d-block w-100" src="{% static "image/article_img.jpg" %}" alt="Third slide">
 <div class="carousel-caption d-none d-md-block">
 <div class="alert alert-dark alert-dismissible fade show" role="alert">
-    <h5>Статьи</h5>
-    <p>Описание: Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+<h5><a href="{% url 'articles_list_url' %}" class="alert-link">Статьи</a></h5>
+<p>Обучающие статьи от опытных программистов </p>
 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 <span aria-hidden="true">&times;</span>
 </button>
@@ -98,15 +98,17 @@
 </a>
 </div>
 </br>
-                <blockquote class="blockquote"><p>Мы представляем вам абсолютно новый и уникальный проект который
+                    <blockquote class="blockquote"><p>Мы представляем вам абсолютно новый и уникальный проект который
                     поможет
-                    начинающим и не только программистам найти нужную литературу по интересующему языку
+                    начинающим и не только программистам найти нужную литературу, обучающий видео-контент, и интересные статьи от опытных программистов по интересующему языку
                     программирования. </p>
                     <p>Здесь вы можете абсолютно бесплатно скачать любое количество книг по программированию как для новичков так и для опытных в формате pdf. </p>
                     <p>Для Вашего удобства мы сделали возможность предварительного просмотра интересующей Вас книги для
                     того что бы вы могли ознакомиться с ней прежде чем решить скачивать её или нет. </p>
-                    <p>Весь имеющийся архив книг который есть на сайте и постоянно будет дополнятся нашей командой никогда не будет платным, мы не коммерческая организация. </p>
-                    <p>Мы будем очень благодарны вам если под понравившейся книгой вы нажмёте одну из кнопок социальных сетей и поделитесь с друзьями. </p>
+                    <p>Огромная подборка видеокурсов для тех кто не любит читать или формат видео усваивается лучше.</p>
+                    <p>Статьи написанные опытными программистами для обучения новичков.</p>
+                    <p>Весь имеющийся контент который есть на сайте и постоянно будет дополнятся нашей командой никогда не будет платным, мы не коммерческая организация. </p>
+                    <p>Мы будем очень благодарны вам если под понравившемся материалом вы нажмёте одну из кнопок социальных сетей и поделитесь с друзьями. </p>
                     <p>По всем вопросам обращаться на почту <a href="mailto:codernet@inbox.ru" rel="nofollow">codernet@inbox.ru</a>
                     </p></blockquote>         
 </div>
