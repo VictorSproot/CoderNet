@@ -9,6 +9,7 @@ from django.core.paginator import Paginator
 def book_list(request):
     books = Book.objects.all()
     categories = Category.objects.all()
+
     context = {
         'books': books,
         'categories': categories

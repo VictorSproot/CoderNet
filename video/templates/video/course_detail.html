@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block content %}<h1>{{ course.title }}</h1>
+{{ course.description }}
 <div class="row">
     {% for video in course.video.all %}
 <!-- Grid row -->
@@ -47,8 +48,7 @@
       </div>
     </div>
     <!--Modal: Name-->
-
-    <a><img class="img-fluid z-depth-1" src="https://mdbootstrap.com/img/screens/yt/screen-video-1.jpg" alt="video"
+    <a href="#" ><img class="img-fluid z-depth-1" src="https://mdbootstrap.com/img/screens/yt/screen-video-1.jpg" alt="video"
         data-toggle="modal" data-target="#modal{{ video.title }}"></a>
 <span>{{ video.title }}</span>
   </div>

@@ -1,0 +1,38 @@
+{% load staticfiles %}
+{% include "booklist/header.html" %}
+<title>
+{% block title %}
+Поиск
+{% endblock %} | CoderNet
+</title>
+{% include "booklist/navbar.html" %}
+<main role="main">
+<div class="container"><br><br><br><br> 
+<ul class="nav nav-tabs nav-fill" role="tablist">
+<li class="nav-item">
+<a class="nav-link active" data-toggle="tab" href="#home" role="tab">Книги</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-toggle="tab" href="#profile" role="tab">Видео</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-toggle="tab" href="#messages" role="tab">Статьи</a>
+</li>
+</ul>
+</br>
+<div class="tab-content"> 
+<div class="tab-pane active" id="home" role="tabpanel"> 
+<ul class="list-group">             
+{% for book in books %}
+<li class="list-group-item"><a href="{{ book.get_absolute_url }}">{{ book.title }} - <p class='text-dark'>{{ book.description|truncatewords:30 }}</p></a></li> 
+{% endfor %}</ul></div>
+<div class="tab-pane" id="profile" role="tabpanel"><ul class="list-group">{% for course in courses %}
+<li class="list-group-item"><a href="{{ course.get_absolute_url }}">{{ course.title }} - <p class='text-dark'>{{ course.category.all.first }}</p></a></li> 
+{% endfor %}</ul></div>
+<div class="tab-pane" id="messages" role="tabpanel"><ul class="list-group">{% for article in articles %}
+<li class="list-group-item"><a href="{{ article.get_absolute_url }}">{{ article.title }} - <p class='text-dark'>{{ article.body|truncatewords:30}}</p></a></li> 
+{% endfor %}</ul></div>              
+</div>
+</div>
+</main>
+{% include "booklist/footer.html" %}

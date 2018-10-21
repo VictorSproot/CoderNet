@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
-from .views import main_page
+from .views import main_page, search
 
 from django.contrib.sitemaps.views import sitemap
 from books.sitemaps import *
@@ -34,11 +34,13 @@ sitemaps = {
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('search/', search, name='search_url'),
     path('', main_page, name='main_page_url'),
     path('books/', include('booklist.urls')),
     path('videos/', include('video.urls')),
     path('articles/', include('articles.urls')),
-    path('sitemaps.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap')
+    path('sitemaps.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    path('summernote/', include('django_summernote.urls')),
 ]
 
 if settings.DEBUG:

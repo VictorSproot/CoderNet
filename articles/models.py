@@ -20,7 +20,8 @@ class Articles(models.Model):
     img_file = models.ImageField(upload_to=generate_filename_jpg, null=True, blank=True, verbose_name='IMG')
 
     def get_absolute_url(self):
-        return reverse('article_detail_url', kwargs={'slug': self.slug})
+        cat_name = self.category.first().slug
+        return reverse('article_detail_url', kwargs={'slug': self.slug, 'cat_name': cat_name})
 
     def __str__(self):
         return self.title
@@ -33,6 +34,8 @@ class Articles(models.Model):
 class Category(models.Model):
     title = models.CharField(max_length=200, db_index=True, verbose_name='Категория')
     slug = models.SlugField(max_length=200, verbose_name='Ссылка', unique=True)
+    desc_for_find = models.TextField(blank=True, db_index=True, verbose_name='Описание для поиска')
+    keywords = models.CharField(max_length=200, blank=True, verbose_name='Кейвордс')
 
     def get_absolute_url(self):
         return reverse('category_detail_articles_url', kwargs={'slug': self.slug})

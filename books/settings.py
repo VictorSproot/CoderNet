@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'booklist.apps.BooklistConfig',
     'video.apps.VideoConfig',
-    'articles.apps.ArticlesConfig'
+    'articles.apps.ArticlesConfig',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +131,7 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+INSTALLED_APPS += ('django_summernote', )
+SUMMERNOTE_THEME = 'bs4'

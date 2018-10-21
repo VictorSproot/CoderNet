@@ -1,24 +1,25 @@
 {% extends 'booklist/booklist.html' %}
-
 {% block title %}
-    {{ article.title }}
+{{ article.title }}
 {% endblock %}
-
+{% block keywords %}<meta name="keywords"
+content="{{ article.keywords }}">{% endblock %}
+{% block description %}<meta name="description"
+content="{{ article.desc_for_find }}">{% endblock %}
 {% block content %}
-    <p class="h1">{{ article.title }}</p>
-    </br>        
-
-
-    {% if article.img_file %}
- 
-<img class="card-img-top"
-src="{{ article.img_file.url }}">
- 
-{% endif %}
-
-</br>  
-   <blockquote class="blockquote"> {{ article.body }}</blockquote>
-    </br> 
-    {{ article.created }}
+<p class="h1">{{ article.title }}</p>
+</br>{% include "booklist/partner.html" %}<br/>               
+<blockquote class="blockquote"> {{ article.body|safe }}</blockquote>
+</br> 
+{{ article.created }}
+<br/><br/>
+<table class="table">
+<thead>
+<tr>
+<th scope="row"><p>Если вам понравилась эта статья поделитесь ею с друзьями, тем самым вы помогаете нам развиваться и добавлять всё больше интересного и полезного контента!</p>
+</th>
+</thead>
+</table>
+<br/>
+{% include "booklist/share.html" %}
 {% endblock %}
-
